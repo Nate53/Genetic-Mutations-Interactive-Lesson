@@ -186,7 +186,7 @@ export default function ReadingFramePuzzle() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">DNA Sequence (Template Strand)</CardTitle>
+          <CardTitle className="text-lg">DNA Sequence (Coding Strand)</CardTitle>
           <CardDescription>Click a nucleotide to select it, then delete or insert</CardDescription>
         </CardHeader>
         <CardContent>

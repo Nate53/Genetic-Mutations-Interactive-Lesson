@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Dna, Zap, GitBranch, Target, Lightbulb, BookOpen, Puzzle, ArrowRight, GraduationCap } from "lucide-react";
+import { Dna, Zap, GitBranch, Target, Lightbulb, BookOpen, Puzzle, ArrowRight, GraduationCap, ClipboardCheck } from "lucide-react";
 
 export default function Home() {
   return (
@@ -185,6 +185,61 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="space-y-4">
+        <h2 className="text-2xl font-semibold flex items-center gap-2">
+          <GraduationCap className="h-6 w-6 text-primary" />
+          Student Practice
+        </h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <Link href="/lessons">
+            <Card className="h-full hover-elevate cursor-pointer group border-primary/20">
+              <CardHeader>
+                <div className="p-2 rounded-md bg-primary/10 w-fit mb-2">
+                  <GraduationCap className="h-5 w-5 text-primary" />
+                </div>
+                <CardTitle className="text-lg">Guided Lessons</CardTitle>
+                <CardDescription>Step-by-step instruction on creating mutations</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Follow guided instructions to physically create each mutation type — silent, missense,
+                  nonsense, deletion, and insertion — with real-time feedback and explanations.
+                </p>
+                <div className="mt-4 flex items-center text-primary text-sm font-medium group-hover:gap-2 transition-all">
+                  Start Learning <ArrowRight className="ml-1 h-4 w-4" />
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/assessment">
+            <Card className="h-full hover-elevate cursor-pointer group border-accent/20">
+              <CardHeader>
+                <div className="p-2 rounded-md bg-accent/10 w-fit mb-2">
+                  <ClipboardCheck className="h-5 w-5 text-accent" />
+                </div>
+                <CardTitle className="text-lg">Assessment</CardTitle>
+                <CardDescription>Mutation challenges & AP/IB free-response questions</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <Badge variant="secondary">Mutation Challenges</Badge>
+                  <Badge variant="secondary">FRQ Questions</Badge>
+                  <Badge variant="secondary">Copy to Docs</Badge>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Test yourself with hands-on mutation challenges and AP/IB-level written questions.
+                  Copy answers for teacher review.
+                </p>
+                <div className="mt-4 flex items-center text-accent text-sm font-medium group-hover:gap-2 transition-all">
+                  Take Assessment <ArrowRight className="ml-1 h-4 w-4" />
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+      </div>
+
       <Card className="bg-muted/50">
         <CardContent className="p-6">
           <div className="flex items-start gap-4">
@@ -194,9 +249,9 @@ export default function Home() {
             <div className="space-y-2">
               <h3 className="font-semibold">Key Distinction</h3>
               <p className="text-sm text-muted-foreground">
-                Remember: An <span className="font-medium text-foreground">individual</span> has a mutation, 
-                but only a <span className="font-medium text-foreground">population</span> evolves. 
-                A mutation only becomes an adaptation if it is "vetted" by the environment and increases 
+                Remember: An <span className="font-medium text-foreground">individual</span> has a mutation,
+                but only a <span className="font-medium text-foreground">population</span> evolves.
+                A mutation only becomes an adaptation if it is "vetted" by the environment and increases
                 in frequency within a population over generations.
               </p>
             </div>

@@ -15,6 +15,8 @@ import Types from "@/pages/types";
 import Outcomes from "@/pages/outcomes";
 import CaseStudies from "@/pages/case-studies";
 import Puzzle from "@/pages/puzzle";
+import Lessons from "@/pages/lessons";
+import Assessment from "@/pages/assessment";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 function Router() {
@@ -27,6 +29,8 @@ function Router() {
       <Route path="/outcomes" component={Outcomes} />
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/puzzle" component={Puzzle} />
+      <Route path="/lessons" component={Lessons} />
+      <Route path="/assessment" component={Assessment} />
       <Route component={NotFound} />
     </Switch>
   );

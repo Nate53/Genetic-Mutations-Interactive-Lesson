@@ -1,5 +1,5 @@
 import { useLocation, Link } from "wouter";
-import { Dna, Zap, GitBranch, Target, Lightbulb, BookOpen, Puzzle, Home } from "lucide-react";
+import { Dna, Zap, GitBranch, Target, Lightbulb, BookOpen, Puzzle, Home, GraduationCap, ClipboardCheck } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -54,6 +54,19 @@ const interactiveItems = [
     title: "Reading Frame Puzzle",
     url: "/puzzle",
     icon: Puzzle,
+  },
+];
+
+const studentItems = [
+  {
+    title: "Guided Lessons",
+    url: "/lessons",
+    icon: GraduationCap,
+  },
+  {
+    title: "Assessment",
+    url: "/assessment",
+    icon: ClipboardCheck,
   },
 ];
 
@@ -124,8 +137,30 @@ export function AppSidebar() {
             <SidebarMenu>
               {interactiveItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton 
-                    asChild 
+                  <SidebarMenuButton
+                    asChild
+                    isActive={location === item.url}
+                    data-testid={`nav-${item.url.replace("/", "")}`}
+                  >
+                    <Link href={item.url}>
+                      <item.icon className="h-4 w-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Student Practice</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {studentItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
                     isActive={location === item.url}
                     data-testid={`nav-${item.url.replace("/", "")}`}
                   >
